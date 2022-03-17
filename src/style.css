@@ -1,0 +1,13 @@
+.search_result{
+    position: relative;
+    z-index: 10;
+}
+
+.search_form{
+    margin-bottom: 0;
+}
+
+.groups_table{
+    position: relative;
+    z-index: 1;
+}
