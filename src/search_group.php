@@ -11,7 +11,7 @@ if (isset($_POST['group_name']) && check_group_name($_POST['group_name'])) {
     try {
         $name = $_POST['group_name'];
         $db = new SQLite3('./groupPageDb.db', SQLITE3_OPEN_READONLY);
-        $sql = "SELECT * FROM groups WHERE name LIKE '$name%' LIMIT 10";
+        $sql = "SELECT * FROM groups WHERE name LIKE '%$name%' LIMIT 10";
         $result = $db->query($sql);
         ?>
         <div class="search_result">

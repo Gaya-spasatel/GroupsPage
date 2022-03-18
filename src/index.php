@@ -8,9 +8,9 @@
 <body>
 
 <div class="search_box">
-    <form action="" class="search_form">
+    <form onsubmit="return false;" class="search_form">
         <input type="text" name="search" id="search" placeholder="Введите группу..." autocomplete="off">
-        <input type="submit">
+        <input type="submit" id="submit_btn">
     </form>
     <div id="search_box-result"></div>
 </div>

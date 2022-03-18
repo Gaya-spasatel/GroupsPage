@@ -1,7 +1,13 @@
 <?php
-$re = "[А-Я]{4}-\d{2}-\d{2}";
-echo '"'.$_POST['group_name'].'"';
-if(isset($_POST['group_name']) && strlen($_POST['group_name'])==14){
+
+function check_group_name($name): bool
+{
+    if (strlen($name)>14) return False;
+    if (strspn($name, "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ-01234567890") != strlen($name)) return False;
+    return True;
+}
+
+if(isset($_POST['group_name']) && check_group_name($_POST['group_name'])){
     $gr_name = $_POST['group_name'];
     try {
         $db = new SQLite3('./groupPageDb.db', SQLITE3_OPEN_READONLY);
