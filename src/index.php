@@ -8,7 +8,7 @@
 <body>
 
 <div class="search_box">
-    <form action="">
+    <form action="" class="search_form">
         <input type="text" name="search" id="search" placeholder="Введите группу..." autocomplete="off">
         <input type="submit">
     </form>
