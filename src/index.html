@@ -1,0 +1,55 @@
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GroupsPage</title>
+  <meta name="Style: FDU4evskiy | Code: Gaya-spasatel"/>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/left-nav-style.css">
+
+</head>
+
+<body>
+  <input type="checkbox" id="nav-toggle" checked hidden>
+
+  <nav class="nav">
+    <label for="nav-toggle" class="nav-toggle" onclick></label>
+    <h2 class="logo">
+      <img style="width: 100%; height: auto" src="/assets/img/cdo.png" alt="cdo_logo">
+    </h2>
+    <ul>
+      <li class="search_box">
+        <form onsubmit="return false;" class="search_form">
+          <input type="text" name="search" id="search" placeholder="Введите группу..." autocomplete="off">
+        </form>
+        <li><input type="submit" id="submit_btn" value="ПОИСК | SEARCH">
+          <tr>
+            <li><div id="search_box-result"></div>
+            </ul>
+          </nav>
+
+          <main role="main">
+            <article>
+              <table class="groups_table">
+                <thead>
+                  <tr>
+                    <th>Группа</th>
+                    <th>Семестр</th>
+                    <th>Предмет</th>
+                    <th>Ссылка</th>
+                    <th>Ведущее подразделение</th>
+                  </tr>
+                </thead>
+                <tbody id="groups_data">
+                </tbody>
+              </table>
+            </article>
+          </main>
+        </body>
+
+        </html>

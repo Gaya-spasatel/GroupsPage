@@ -20,10 +20,17 @@ if(isset($_POST['group_name']) && check_group_name($_POST['group_name'])){
             $table_body .= "<tr>";
             foreach ($row as $item) {
                 if(gettype($item)=="string" && stripos($item, "https") === 0){
-                    $table_body .= "<td><a href='$item'>$item</a></td>";
+                    $item = "<a href='$item'><img width=50 src='/assets/img/link.png' border=0 title='Перейти в дисциплину'></a>";
+                    $table_body .= "<th>$item</th>";
                 }
                 else {
-                    $table_body .= "<td>$item</td>";
+                  if(gettype($item)=="string" && stripos($item, "Смешанное") === 0){
+                    $item = mb_substr($item, mb_strpos($item, 'Смешанное обучение / ') + mb_strlen('Смешанное обучение / '));
+                    $table_body .= "<th>$item</th>";
+                  }
+                  else {
+                      $table_body .= "<th>$item</th>";
+                  }
                 }
             }
             $table_body .= "</tr>";
