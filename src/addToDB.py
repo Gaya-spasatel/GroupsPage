@@ -3,16 +3,16 @@ import pandas as pd
 
 conn = sqlite3.connect("./groupPageDb.db")
 cursor_sqlite = conn.cursor()
-filename = "./Справочник_подключений_Осень_21_22.xlsx"
+filename = "./data/Справочник подключений Общий.xlsx"
 data = pd.read_excel(filename)
 
 for row in data.values:
     print(row)
     group = row[0]
-    subject = row[1]
-    link = row[2]
-    department = row[3]
-    semester = 0
+    subject = row[2]
+    link = row[3]
+    department = row[4]
+    semester = row[1]
 
     sql = f"SELECT * FROM \"groups\" WHERE name = '{group}'"
     cursor_sqlite.execute(sql)
